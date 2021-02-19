@@ -1,9 +1,9 @@
 import React from 'react';
-
+import App from 'myappy3283726362/dist/App';
 
 function Home() {
   return (
-    <div>This is Home</div>
+    <App />
   );
 }
 

@@ -11,6 +11,7 @@ import 'antd/es/divider/style/css';
 import AddBill from './AddBill';
 import Pager from '../../components/Pager';
 import {cloneDeep} from 'lodash';
+import App from 'myappy3283726362/dist/App';
 
  class RetailerBillsContainer extends PureComponent {
   constructor(props) {
@@ -123,6 +124,7 @@ import {cloneDeep} from 'lodash';
               />
             </div>
          </div>
+         <App store1={this.props.store1} />
         <Table 
           style={{background:'#B0C4DE', marginTop:'20px'}} 
           size={'small'} 

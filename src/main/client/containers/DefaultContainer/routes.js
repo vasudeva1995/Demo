@@ -7,7 +7,7 @@ import Cloth from '../ClothContainer';
 import LotsContainer from '../Lots/index';
 import Retailer from '../RetailerContainer';
 import RetailerBills from '../RetailerBills';
-
+import configureStore from '../../store';
 
 const RoutesToRender = () => (
   <Switch>
@@ -29,7 +29,7 @@ const RoutesToRender = () => (
     <Route
       exact
       path="/RetailerBills"
-      component={RetailerBills}
+      render={() => <RetailerBills store1={configureStore()} />}
     />
     <Route
       exact
