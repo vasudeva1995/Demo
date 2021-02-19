@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const buildDirectory = path.join(__dirname, './src/main/webapp/');
+const buildDirectory = path.join(__dirname, './src/main/resources/public/');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development';

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -12,7 +11,7 @@ import configureStore from './store';
 ReactDOM.render(
   <Provider store={configureStore()}>
     <Router>
-      <DefaultContainer />
+      <DefaultContainer store1={configureStore()} />
     </Router>
   </Provider>,
   document.getElementById('root'),

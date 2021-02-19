@@ -86,7 +86,7 @@ import Challan from './Challan';
       }
       if(obj.key === 'moveStatus')
       {
-        obj.render = data => <Button onClick={()=>{this.lotNo=data; this.props.toggleDrawer(true)}} style={{width:150, background:'#FA8072'}}>{this.props.statusMap[this.props.lotsMap[data].status]}</Button>
+        obj.render = (data,row) => {return this.props.statusMap[row.status]?<Button onClick={()=>{this.lotNo=data; this.props.toggleDrawer(true)}} style={{width:150, background:'#FA8072'}}>{this.props.statusMap[this.props.lotsMap[data].status]}</Button>:<div style={{background:''}}>Lot is In-Stock</div>}
       }
     }
     return tableHeader;
@@ -108,10 +108,16 @@ import Challan from './Challan';
   render() {
     return (
       <div>
-        <div><Button style={{marginLeft:'calc(100% - 100px)'}} onClick = {()=>this.props.toggleDrawer('addLot')}>+ Add Lot</Button>
-        <Pager
-             {...Object.assign({}, this.props.paginationConfig, { onPagerInteraction: this.onPagerInteraction })}
-        /></div>
+         <div style={{marginBottom:'20px', display:'flex',justifyContent: 'flex-end'}}>
+            <div style={{width:'10%'}}>
+               <Button style={{background:'#E5EDF3',fontSize:'15px', marginLeft:'calc(100% - 100px)'}} onClick = {()=>this.props.toggleDrawer('addLot')}>+ Add Lot</Button>
+            </div>
+            <div style={{width:'10%',padding:'5px'}}>
+              <Pager
+                {...Object.assign({}, this.props.paginationConfig, { onPagerInteraction: this.onPagerInteraction })}
+              />
+            </div>
+         </div>
         <Table 
           style={{background:'#B0C4DE', marginTop:'20px'}} 
           size={'small'} 
@@ -134,7 +140,7 @@ import Challan from './Challan';
                     statusList={this.props.statusList}
                     selectedStatus={this.selectedStatus}
                     statusMap={this.props.statusMap} />}
-          title={this.props.isDrawerOpen === 'addLot'?'Add Lot':'Move Status'}
+          title={this.props.isDrawerOpen === 'addLot'?'Add Lot':this.selectedStatus?this.selectedStatus:'Move Status'}
         />
        </div>
     );
