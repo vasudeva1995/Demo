@@ -24,16 +24,16 @@
     "rules": {
         "no-console": 0,
         "no-empty": 0,
+        "linebreak-style": 0,
         "no-irregular-whitespace":0,
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     },
-    "ecmaFeatures":{
-  "jsx": true,
-  "modules": true,
-  "destructuring": true,
-  "classes": true,
-  "forOf": true,
-  "blockBindings": true,
-  "arrowFunctions": true
-}
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "destructuring": true,
+        "classes": true,
+        "forOf": true,
+        "blockBindings": true
+    }
 }
